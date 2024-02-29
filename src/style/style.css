@@ -4,6 +4,8 @@
 
 }
 
+
+
 .window-sentings{
     background-color: #ffffff;
     position: absolute;
@@ -13,7 +15,7 @@
     width: 500px;
     height: 500px;
     border-radius: 30px;
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
@@ -97,9 +99,11 @@
     border-radius: 100%;
     height: 40px;
     width: 40px;
+    cursor: pointer;
 }
 
 #color-escolha p {
+    cursor: pointer;
     display: flex;
     align-items: center;
     text-align: center;
@@ -111,7 +115,12 @@
     width: 40px;
 }
 
-.font h1,  .color h1{
+#font-escolha p:hover, #color-escolha p:hover {
+    border: solid 1px black;
+}
+
+
+.font h1,  .color h1, .configs-time h1{
     padding-left: 10px;
 }
 
@@ -123,14 +132,15 @@
     align-items: center;
 }
 
-.window-sentings button {
+#apply-button{
     position: absolute;
     top: 95%;
     width: 100px;
     height: 50px;
     border-radius: 30px;
-    background-color: #f87070;
+    background-color: #eef1fa;
     font-size: 20px;
+    cursor: pointer;
 }
 
 #principal {
@@ -149,4 +159,26 @@
 
 #c3 {
     background-color: #1e2140;
+}
+
+#f1{
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#f2{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#f3{
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+i {
+    cursor: pointer;
 }

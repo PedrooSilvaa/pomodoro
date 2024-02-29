@@ -5,21 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
     <link rel="stylesheet" href="src/style/style.css">
-</head>
-<body>
-    
-</body>
-</html> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <section id="principal">
-        <div class="window-sentings">
+        <i class="fa-solid fa-gear" onclick="Sentings()"></i>
+
+        <div id="window" class="window-sentings">
             <div class="title-sentings">
                 <h1>Sentings</h1>
-                <i class="fa-solid fa-xmark"></i>
-            </div>
+                <i class="fa-solid fa-xmark" onclick="Close()"></i>
+        </div>
             <div class="configs-time">
-                <h3>Time (Minutes)</h3>
+                <h1>Time (Minutes)</h1>
             <div id="title-time">
                 <p>Pomodoro</p>
                 <p>Short Break</p>
@@ -34,9 +37,9 @@
             <div class="font">
                 <h1>Font</h1>
                 <div id="font-escolha">
-                <p onclick="font1()">Aa</p>
-                <p onclick="font2()">Aa</p>
-                <p onclick="font3()">Aa</p>
+                <p  id="f1" onclick="font1()">Aa</p>
+                <p  id="f2" onclick="font2()">Aa</p>
+                <p  id="f3" onclick="font3()">Aa</p>
                 </div>
             </div>
             <div class="color">
@@ -47,7 +50,7 @@
                     <p id="c3" onclick="color3()"></p>
                 </div>
             </div>
-            <button onclick="Apply()">Apply</button>
+            <button id="apply-button" onclick="Apply()">Apply</button>
         </div>
     </section>    
     <script src="src/script/script.js"></script>

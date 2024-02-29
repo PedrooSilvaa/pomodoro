@@ -12,18 +12,20 @@ function Apply(){
     console.log(short);
     console.log(long);
     document.getElementById("principal").style.backgroundColor = color;
+    document.getElementById("principal").style.fontFamily = font;
+    Close();
 }
 
 function font1(){
-    //font = fonte tal
+    font = "\"Madimi One\", sans-serif";
 }
 
 function font2(){
-    //font = fonte tal
+    font = "\"Playfair Display\", serif";
 }
 color
 function font3(){
-    //font = fonte tal
+    font = "\"Oswald\", sans-serif";
 }
 
 function color1(){
@@ -36,4 +38,12 @@ function color2(){
 
 function color3(){
     color = "#1e2140";
+}
+
+function Sentings(){
+    document.getElementById("window").style.display = "flex";
+}
+
+function Close(){
+    document.getElementById("window").style.display = "none";
 }
