@@ -12,42 +12,44 @@
 </html> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <div class="window-sentings">
-        <div class="title-sentings">
-            <h1>Sentings</h1>
-            <i class="fa-solid fa-xmark"></i>
-        </div>
-        <div class="configs-time">
-            <h3>Time (Minutes)</h3>
-           <div id="title-time">
-            <p>Pomodoro</p>
-            <p>Short Break</p>
-            <p>Long Break</p>
-        </div>
-        <div id="box-number">
-            <input type="number" id="pomodoro">
-            <input type="number" id="shortBreak">
-            <input type="number" id="longBreak">
-        </div>
-        </div>
-        <div class="font">
-            <h1>Font</h1>
-            <div id="font-escolha">
-            <p onclick="font1()">Aa</p>
-            <p onclick="font2()">Aa</p>
-            <p onclick="font3()">Aa</p>
+    <section id="principal">
+        <div class="window-sentings">
+            <div class="title-sentings">
+                <h1>Sentings</h1>
+                <i class="fa-solid fa-xmark"></i>
             </div>
-        </div>
-        <div class="color">
-            <h1>Color</h1>
-            <div id="color-escolha">
-                <p></p>
-                <p></p>
-                <p></p>
+            <div class="configs-time">
+                <h3>Time (Minutes)</h3>
+            <div id="title-time">
+                <p>Pomodoro</p>
+                <p>Short Break</p>
+                <p>Long Break</p>
             </div>
+            <div id="box-number">
+                <input type="number" id="pomodoro">
+                <input type="number" id="shortBreak">
+                <input type="number" id="longBreak">
+            </div>
+            </div>
+            <div class="font">
+                <h1>Font</h1>
+                <div id="font-escolha">
+                <p onclick="font1()">Aa</p>
+                <p onclick="font2()">Aa</p>
+                <p onclick="font3()">Aa</p>
+                </div>
+            </div>
+            <div class="color">
+                <h1>Color</h1>
+                <div id="color-escolha">
+                    <p id="c1" onclick="color1()"></p>
+                    <p id="c2" onclick="color2()"></p>
+                    <p id="c3" onclick="color3()"></p>
+                </div>
+            </div>
+            <button onclick="Apply()">Apply</button>
         </div>
-        <button onclick="Apply()">Apply</button>
-    </div>
+    </section>    
     <script src="src/script/script.js"></script>
 </body>
 </html>

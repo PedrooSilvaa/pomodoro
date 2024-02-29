@@ -5,7 +5,7 @@
 }
 
 .window-sentings{
-    background-color: aqua;
+    background-color: #ffffff;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -20,14 +20,13 @@
 }
 
 .title-sentings {
-    background-color: pink;
     width: 100%;
     display: flex;
     justify-content: space-between;
     font-size: 20px;
     align-items: center;
     height: 125px;
-    border-radius: 20px;
+    border-bottom:  1px solid black;
 }
 
 .title-sentings h1, i {
@@ -41,10 +40,10 @@
 .configs-time {
     padding: 10px 0;
     height: 125px;
-    background-color: blueviolet;
     width: 100%;
     display: flex;
     flex-direction: column;
+    border-bottom:  1px solid black;
 }
 
 #box-number {
@@ -59,6 +58,8 @@
     border-radius: 10px;
     text-align: center;
     font-size: 15px;
+    background-color: #eef1fa;
+    border-color: white;
 }
 
 #title-time {
@@ -72,12 +73,12 @@
 
 }
 .font {
-    background-color: brown;
     width: 100%;
     display: flex;
     justify-content: space-between;
     height: 125px;
     align-items: center;
+    border-bottom: 1px solid black;
 }
 
 #font-escolha, #color-escolha{
@@ -85,12 +86,24 @@
     align-items: center;
 }
 
-#font-escolha p, #color-escolha p {
+#font-escolha p{
     display: flex;
     align-items: center;
     text-align: center;
     justify-content: center;
-    background-color: black;
+    background-color: #eef1fa;
+    color: black;
+    margin: 0 10px;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+}
+
+#color-escolha p {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
     color: white;
     margin: 0 10px;
     border-radius: 100%;
@@ -105,8 +118,6 @@
 .color{
     height: 125px;
     width: 100%;
-    background-color: chartreuse;
-    border-radius: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -118,6 +129,24 @@
     width: 100px;
     height: 50px;
     border-radius: 30px;
-    background-color: yellow;
+    background-color: #f87070;
     font-size: 20px;
+}
+
+#principal {
+    background-color: #1e2140;
+    width: 100%;
+    height: 100vh;
+}
+
+#c1 {
+    background-color: #f8706f;
+}
+
+#c2 {
+    background-color: #6ff3f8;
+}
+
+#c3 {
+    background-color: #1e2140;
 }
