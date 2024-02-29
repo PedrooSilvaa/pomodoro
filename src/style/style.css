@@ -153,7 +153,7 @@
 }
 
 #c3 {
-    background-color: #1e2140;
+    background-color: #d981f9;
 }
 
 #f1{
@@ -198,7 +198,7 @@ i {
 }
 
 .menu {
-    background-color: #151932;
+    background-color: #3e4156;
     display: flex;
     padding: 0 20px;
     width: 350px;
@@ -211,7 +211,7 @@ i {
 }
 
 #p-pomodoro{
-    background-color: #f8706f;
+    background-color: #151932;
     height: 90%;
     border-radius: 25px;
     width: 95px;
@@ -223,7 +223,12 @@ i {
 
 .relogio {
     background-color: #151932;
+    color: white;
     border-radius: 100%;
     width: 400px;
     height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
 }

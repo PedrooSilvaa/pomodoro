@@ -11,8 +11,10 @@ function Apply(){
     console.log(pomodoro);
     console.log(short);
     console.log(long);
-    document.getElementById("principal").style.backgroundColor = color;
+    document.getElementById("relogio").style.backgroundColor = color;
+    document.getElementById("p-pomodoro").style.backgroundColor = color;
     document.getElementById("principal").style.fontFamily = font;
+    
     Close();
 }
 
@@ -37,7 +39,7 @@ function color2(){
 }
 
 function color3(){
-    color = "#1e2140";
+    color = "#d981f9";
 }
 
 function Sentings(){
