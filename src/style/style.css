@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.window-sentings{
+    background-color: aqua;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 500px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title {
+    background-color: pink;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    align-items: center;
+    height: 125px;
+    border-radius: 20px;
+}
+
+.title h1, i {
+    padding: 0 30px;
+}
+
+.title i {
+    font-size: 40px;
+}
+
+.configs {
+    padding: 10px 0;
+    height: 125px;
+    background-color: blueviolet;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+#caixas {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 20px;
+}
+
+#caixas input{
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 15px;
+}
+
+#etiqueta {
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+#etiqueta p{
+    width: 150px;
+
+}
+.fonts {
+    background-color: brown;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 125px;
+    align-items: center;
+}
+
+#font-escolhas, #color-escolha{
+    display: flex;
+    align-items: center;
+}
+
+#font-escolhas p, #color-escolha p {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    margin: 0 10px;
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+}
+
+.fonts h1,  .color h1{
+    padding-left: 10px;
+}
+
+.color{
+    height: 125px;
+    width: 100%;
+    background-color: chartreuse;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
