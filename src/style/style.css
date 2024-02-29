@@ -143,11 +143,6 @@
     cursor: pointer;
 }
 
-#principal {
-    background-color: #1e2140;
-    width: 100%;
-    height: 100vh;
-}
 
 #c1 {
     background-color: #f8706f;
@@ -181,4 +176,54 @@
 
 i {
     cursor: pointer;
+}
+
+#principal {
+    background-color: #1e2140;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#engrenagem {
+    font-size: 50px;
+}
+
+#title-principal {
+    font-size: 50px;
+}
+
+.menu {
+    background-color: #151932;
+    display: flex;
+    padding: 0 20px;
+    width: 350px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 25px;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+#p-pomodoro{
+    background-color: #f8706f;
+    height: 90%;
+    border-radius: 25px;
+    width: 95px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.relogio {
+    background-color: #151932;
+    border-radius: 100%;
+    width: 400px;
+    height: 400px;
 }
