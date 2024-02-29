@@ -19,7 +19,7 @@
     align-items: center;
 }
 
-.title {
+.title-sentings {
     background-color: pink;
     width: 100%;
     display: flex;
@@ -30,15 +30,15 @@
     border-radius: 20px;
 }
 
-.title h1, i {
+.title-sentings h1, i {
     padding: 0 30px;
 }
 
-.title i {
+.title-sentings i {
     font-size: 40px;
 }
 
-.configs {
+.configs-time {
     padding: 10px 0;
     height: 125px;
     background-color: blueviolet;
@@ -47,13 +47,13 @@
     flex-direction: column;
 }
 
-#caixas {
+#box-number {
     display: flex;
     justify-content: space-around;
     padding-bottom: 20px;
 }
 
-#caixas input{
+#box-number input{
     width: 150px;
     height: 30px;
     border-radius: 10px;
@@ -61,17 +61,17 @@
     font-size: 15px;
 }
 
-#etiqueta {
+#title-time {
     padding-top: 30px;
     display: flex;
     justify-content: space-around;
 }
 
-#etiqueta p{
+#title-time p{
     width: 150px;
 
 }
-.fonts {
+.font {
     background-color: brown;
     width: 100%;
     display: flex;
@@ -80,12 +80,12 @@
     align-items: center;
 }
 
-#font-escolhas, #color-escolha{
+#font-escolha, #color-escolha{
     display: flex;
     align-items: center;
 }
 
-#font-escolhas p, #color-escolha p {
+#font-escolha p, #color-escolha p {
     display: flex;
     align-items: center;
     text-align: center;
@@ -98,7 +98,7 @@
     width: 40px;
 }
 
-.fonts h1,  .color h1{
+.font h1,  .color h1{
     padding-left: 10px;
 }
 
@@ -112,3 +112,12 @@
     align-items: center;
 }
 
+.window-sentings button {
+    position: absolute;
+    top: 95%;
+    width: 100px;
+    height: 50px;
+    border-radius: 30px;
+    background-color: yellow;
+    font-size: 20px;
+}
