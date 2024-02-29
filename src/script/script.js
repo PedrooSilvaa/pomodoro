@@ -8,9 +8,7 @@ function Apply(){
     pomodoro = document.getElementById('pomodoro').value;
     short = document.getElementById('shortBreak').value;
     long = document.getElementById('longBreak').value;
-    console.log(pomodoro);
-    console.log(short);
-    console.log(long);
+    document.getElementById("minutes").innerText = pomodoro;
     document.getElementById("relogio").style.backgroundColor = color;
     document.getElementById("p-pomodoro").style.backgroundColor = color;
     document.getElementById("principal").style.fontFamily = font;
