@@ -55,177 +55,143 @@ function Close(){
     document.getElementById("window").style.display = "none";
 }
 
-function Time(duration, display){
+function TimePomo(duration, display){
     var timer = duration, minutes, seconds;
-    var timer2 = duration, minutes, seconds;
-    var timer3 = duration, minutes, seconds;
-    var timer4 = duration, minutes, seconds;
-    var timer5 = duration, minutes, seconds;
-    var timer6 = duration, minutes, seconds;
-    var timer7 = duration, minutes, seconds;
 
     setInterval(function(){
-
-        if(modo == 1){
-            minutes = parseInt(timer / 60, 10);
-            seconds = parseInt(timer % 60, 10);
-        }
-        if(modo == 2){
-            minutes = parseInt(timer2 / 60, 10);
-            seconds = parseInt(timer2 % 60, 10);
-        }
-        if(modo == 3){
-            minutes = parseInt(timer3 / 60, 10);
-            seconds = parseInt(timer3 % 60, 10);
-        }
-        if(modo == 4){
-            minutes = parseInt(timer4 / 60, 10);
-            seconds = parseInt(timer4 % 60, 10);
-        }
-        if(modo == 5){
-            minutes = parseInt(timer5 / 60, 10);
-            seconds = parseInt(timer5 % 60, 10);
-        }
-        if(modo == 6){
-            minutes = parseInt(timer6 / 60, 10);
-            seconds = parseInt(timer6 % 60, 10);
-        }
-        if(modo == 7){
-            minutes = parseInt(timer7 / 60, 10);
-            seconds = parseInt(timer7 % 60, 10);
-        }
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
         minutes = minutes < 10 ? "0" + minutes : minutes
         seconds = seconds < 10 ? "0" + seconds : seconds
 
         display.textContent = minutes + ":" + seconds;
-        
+
         if(--timer < 0 && modo == 1){
-            timer = 0;
             console.log("modo 1 " + duration);
+            timer = 0;
             modo = 2;
-            StartTime();
-            timer2 = duration;
+            TrocaMod();
         }
-        if(--timer2 < 0 && modo == 2){
-            console.log("modo 2 " + duration);
-            timer2 = 0;
-            modo = 3;
-            StartTime();
-            timer3 = duration;
-        }
-        if(--timer3 < 0 && modo == 3){
-            timer3 = 0;
+        if(--timer < 0 && modo == 3){
             console.log("modo 3 " + duration);
-            modo = 4;
-            StartTime();
-            timer4 = duration;
-            
+            timer = 0;
+            modo = 4;   
+            TrocaMod();       
         }
-        if(--timer4 < 0 && modo == 4){
-            timer4 = 0;
-            console.log("modo 4 " + duration);
-            modo = 5;
-            StartTime();
-            timer5 = duration;
-
-        }
-        if(--timer5 < 0 && modo == 5){
-            timer5 = 0;
+        if(--timer < 0 && modo == 5){
             console.log("modo 5 " + duration);
+            timer = 0;
             modo = 6;
-            StartTime();
-            timer6 = duration;
-
+            TrocaMod();
         }
-        if(--timer6 < 0 && modo == 6){
-            timer6 = 0;
-            console.log("modo 6 " + duration);
-            modo = 7;
-            StartTime();
-            timer7 = duration;
-
-        }
-        if(--timer7 < 0 & modo == 7){
-            timer7 = 0;
+        if(--timer < 0 & modo == 7){
             console.log("modo 7 " + duration);
+            timer = 0;
         }
 
-    }, 500)
+    }, 1000)
 }
 
-function StartTime(){
-    console.log(pomodoro);
-    console.log(short);
-    console.log(long);
-    if(modo == 1){
-        duration = (60 * pomodoro);
-        console.log("modo1");
-        display = document.querySelector("#minutes");
-        TrocaMod();
-    }
-    if(modo == 2){
-        duration = (60 * short);
-        console.log("modo2");
-        display = document.querySelector("#minutes");
-        TrocaMod();
-    }
-    if(modo == 3){
+function StartPomo(){
         duration = 60 * pomodoro;
-        console.log("modo3");
         display = document.querySelector("#minutes");
-        TrocaMod();
-    }
-    if(modo == 4){
-        duration = 60 * long;
-        console.log("modo4");
-        display = document.querySelector("#long-minutes");
-        TrocaMod();
-    }
-    if(modo == 5){
-        duration = 60 * pomodoro;
-        console.log("modo5");
-        display = document.querySelector("#minutes");
-        TrocaMod();
-    }
-    if(modo == 6){
-        duration = 60 * short;
-        console.log("modo6")
-        display = document.querySelector("#short-minutes");
-        TrocaMod();
-    }
-    if(modo == 7){
-        duration = 60 * pomodoro;
-        console.log("modo7")
-        display = document.querySelector("#minutes");
-    }
     
-    Time(duration, display);
+    TimePomo(duration, display);
+}
 
+function TimeShort(duration, display){
+    var timerS = duration, minutes, seconds;
+
+    setInterval(function(){
+        minutes = parseInt(timerS / 60, 10);
+        seconds = parseInt(timerS % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes
+        seconds = seconds < 10 ? "0" + seconds : seconds
+
+        display.textContent = minutes + ":" + seconds;
+
+        if(--timerS < 0 && modo == 2){
+            console.log("modo 2 " + duration);
+            timerS = 0;
+            modo = 3;
+            TrocaMod();
+        }
+        if(--timerS < 0 && modo == 6){
+            console.log("modo 2 " + duration);
+            timerS = 0;
+            modo = 7;
+            TrocaMod();
+        }
+
+    }, 1000)
+}
+
+function StartShort(){
+        duration = 60 * short;
+        display = document.querySelector("#short-minutes");
+    
+    TimeShort(duration, display);
+}
+
+function TimeLong(duration, display){
+    var timerL = duration, minutes, seconds;
+
+    setInterval(function(){
+        minutes = parseInt(timerL / 60, 10);
+        seconds = parseInt(timerL % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes
+        seconds = seconds < 10 ? "0" + seconds : seconds
+
+        display.textContent = minutes + ":" + seconds;
+
+        if(--timerL < 0 && modo == 4){
+            console.log("modo 4 " + duration);
+            timerL = 0;
+            modo = 5;
+            TrocaMod();
+        }
+
+    }, 1000)
+}
+
+function StartLong(){
+        duration = 60 * short;
+        display = document.querySelector("#long-minutes");
+    
+    TimeLong(duration, display);
 }
 
 
 function TrocaMod(){
-    // if(modo == 2){
-    //     document.getElementById("short-re").style.display = "flex";
-    // }
+    if(modo == 2){
+        document.getElementById("short-re").style.display = "flex";
+        StartShort();
+    }
     if(modo == 3){
         document.getElementById("short-re").style.display = "none";
+        StartPomo();  
     }
     if(modo == 4){
         document.getElementById("short-re").style.display = "none";
         document.getElementById("long-relo").style.display = "flex";
+        StartLong();
     }
     if(modo == 5){
         document.getElementById("short-re").style.display = "none";
         document.getElementById("long-relo").style.display = "none";
+        StartPomo();
     }
     if(modo == 6){
         document.getElementById("short-re").style.display = "flex";
+        StartShort();
     }
     if(modo == 7){
         document.getElementById("short-re").style.display = "none";
         document.getElementById("short-re").style.display = "none";
+        StartPomo();
     }
 }
 
