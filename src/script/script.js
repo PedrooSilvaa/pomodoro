@@ -74,7 +74,7 @@ function TimePomo1(duration, display){
                 TrocaMod();
                 StartShort();
             }
-    }, 1000)
+    }, 500)
 }
 
 function StartPomo1(){
@@ -104,7 +104,7 @@ function TimePomo2(duration, display){
                 StartLong();
             }
 
-    }, 1000)
+    }, 500)
 }
 
 function StartPomo2(){
@@ -134,7 +134,7 @@ function TimePomo3(duration, display){
                 StartShort();
             }
 
-    }, 1000)
+    }, 500)
 }
 
 function StartPomo3(){
@@ -161,7 +161,7 @@ function TimePomo4(duration, display){
                 timer = 0;
         }
 
-    }, 1000)
+    }, 500)
 }
 
 function StartPomo4(){
@@ -189,10 +189,9 @@ function TimeShort(duration, display){
                 modo = 7;
                 TrocaMod();
                 StartPomo2();  
-
             }
 
-    }, 1000)
+    }, 500)
 }
 
 function StartShort(){
@@ -222,7 +221,7 @@ function TimeShort1(duration, display){
                 StartPomo4();  
         }
 
-    }, 1000)
+    }, 500)
 }
 
 function StartShort1(){
@@ -255,7 +254,7 @@ function TimeLong(duration, display){
         }
         
 
-    }, 1000)
+    }, 500)
 }
 
 function StartLong(){
