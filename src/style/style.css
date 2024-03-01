@@ -232,3 +232,13 @@ i {
     align-items: center;
     font-size: 80px;
 }
+
+#start {
+    width: 100px;
+    height: 50px;
+    font-size: 30px;
+    border-radius: 20px;
+    background-color: #151932;
+    color: white;
+    cursor: pointer;
+}
