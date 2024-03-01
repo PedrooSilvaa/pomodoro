@@ -242,3 +242,29 @@ i {
     color: white;
     cursor: pointer;
 }
+
+#short-re {
+    background-color: pink;
+    color: white;
+    border-radius: 100%;
+    width: 400px;
+    height: 400px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    position: absolute;
+}
+
+#long-relo {
+    background-color: blueviolet;
+    color: white;
+    border-radius: 100%;
+    width: 400px;
+    height: 400px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 80px;
+    position: absolute;
+}
