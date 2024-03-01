@@ -62,15 +62,33 @@ function Time(duration, display){
 
     setInterval(function(){
 
-        if(modo == 1 || modo == 3 || modo == 5 ||modo == 7){
+        if(modo == 1){
             minutes = parseInt(timer / 60, 10);
             seconds = parseInt(timer % 60, 10);
-        }else if(modo == 2 || modo == 6){
+        }
+        if(modo == 2){
             minutes = parseInt(timer2 / 60, 10);
             seconds = parseInt(timer2 % 60, 10);
-        }else{
+        }
+        if(modo == 3){
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+        }
+        if(modo == 4){
             minutes = parseInt(timer3 / 60, 10);
             seconds = parseInt(timer3 % 60, 10);
+        }
+        if(modo == 5){
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
+        }
+        if(modo == 6){
+            minutes = parseInt(timer2 / 60, 10);
+            seconds = parseInt(timer2 % 60, 10);
+        }
+        if(modo == 7){
+            minutes = parseInt(timer / 60, 10);
+            seconds = parseInt(timer % 60, 10);
         }
 
         minutes = minutes < 10 ? "0" + minutes : minutes
@@ -80,13 +98,13 @@ function Time(duration, display){
         
         if(--timer < 0 && modo == 1){
             timer = 0;
-            console.log("modo 1" + duration);
+            console.log("modo 1 " + duration);
             modo = 2;
             StartTime();
             timer2 = duration;
         }
         if(--timer2 < 0 && modo == 2){
-            console.log("modo 2" + duration);
+            console.log("modo 2 " + duration);
             timer2 = 0;
             modo = 3;
             StartTime();
@@ -94,7 +112,7 @@ function Time(duration, display){
         }
         if(--timer < 0 && modo == 3){
             timer = 0;
-            console.log("modo 3" + duration);
+            console.log("modo 3 " + duration);
             modo = 4;
             StartTime();
             timer3 = duration;
@@ -102,7 +120,7 @@ function Time(duration, display){
         }
         if(--timer3 < 0 && modo == 4){
             timer3 = 0;
-            console.log("modo 4" + duration);
+            console.log("modo 4 " + duration);
             modo = 5;
             StartTime();
             timer = duration;
@@ -110,7 +128,7 @@ function Time(duration, display){
         }
         if(--timer < 0 && modo == 5){
             timer = 0;
-            console.log("modo 5" + duration);
+            console.log("modo 5 " + duration);
             modo = 6;
             StartTime();
             timer2 = duration;
@@ -118,16 +136,16 @@ function Time(duration, display){
         }
         if(--timer2 < 0 && modo == 6){
             timer2 = 0;
-            console.log("modo 6" + duration);
+            console.log("modo 6 " + duration);
             modo = 7;
             StartTime();
             timer = duration;
 
         }
         if(--timer < 0 && modo == 7){
-            Pause();
+            modo = 8
             timer = 0;
-            console.log("modo 7" + duration);
+            console.log("modo 7 " + duration);
         }
 
     }, 500)
@@ -175,6 +193,10 @@ function StartTime(){
         console.log("modo7")
         display = document.querySelector("#minutes");
     }
+    if(modo == 8){
+        duration = 0;
+        display = document.querySelector("#minutes");
+    }
     
     Time(duration, display);
 
@@ -182,27 +204,27 @@ function StartTime(){
 
 
 function TrocaMod(){
-    // if(modo == 2){
-    //     document.getElementById("short-re").style.display = "flex";
-    // }
-    // if(modo == 3){
-    //     document.getElementById("short-re").style.display = "none";
-    // }
-    // if(modo == 4){
-    //     document.getElementById("short-re").style.display = "none";
-    //     document.getElementById("long-relo").style.display = "flex";
-    // }
-    // if(modo == 5){
-    //     document.getElementById("short-re").style.display = "none";
-    //     document.getElementById("long-relo").style.display = "none";
-    // }
-    // if(modo == 6){
-    //     document.getElementById("short-re").style.display = "flex";
-    // }
-    // if(modo == 7){
-    //     document.getElementById("short-re").style.display = "none";
-    //     document.getElementById("short-re").style.display = "none";
-    // }
+    if(modo == 2){
+        document.getElementById("short-re").style.display = "flex";
+    }
+    if(modo == 3){
+        document.getElementById("short-re").style.display = "none";
+    }
+    if(modo == 4){
+        document.getElementById("short-re").style.display = "none";
+        document.getElementById("long-relo").style.display = "flex";
+    }
+    if(modo == 5){
+        document.getElementById("short-re").style.display = "none";
+        document.getElementById("long-relo").style.display = "none";
+    }
+    if(modo == 6){
+        document.getElementById("short-re").style.display = "flex";
+    }
+    if(modo == 7){
+        document.getElementById("short-re").style.display = "none";
+        document.getElementById("short-re").style.display = "none";
+    }
 }
 
 
