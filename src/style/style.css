@@ -292,6 +292,7 @@ i {
     cursor: pointer;
     color: white;
     border-radius: 20px;
+    padding: 0;
 }
 
 .local-game  h1{
