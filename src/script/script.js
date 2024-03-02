@@ -20,6 +20,7 @@ function Apply(){
     console.log(long);
     document.getElementById("minutes").innerText = pomodoro + ":00";
     document.getElementById("relogio").style.backgroundColor = color;
+    document.getElementById("title-principal").style.color = color;
     document.getElementById("p-pomodoro").style.backgroundColor = color;
     document.getElementById("start").style.backgroundColor = color;
     document.getElementById("principal").style.fontFamily = font;

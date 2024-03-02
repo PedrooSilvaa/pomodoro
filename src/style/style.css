@@ -4,8 +4,6 @@
 
 }
 
-
-
 .window-sentings{
     background-color: #ffffff;
     position: absolute;
@@ -447,4 +445,28 @@ button{
 
 #modoUm {
     background-color: #31c4be;
+}
+
+@media(max-width: 800px){
+    .relogio {
+        width: 70%;
+        height: 40%;
+        font-size: 50px;
+    }
+    
+    .menu{
+        width: 70%;
+    }
+
+    .window-sentings {
+        width: 90%;
+    }
+
+    .tt-p {
+        width: 30%;
+    }
+
+    #pomodoro, #shortBreak, #longBreak {
+        width: 30%;
+    }
 }
