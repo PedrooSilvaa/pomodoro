@@ -31,11 +31,8 @@
     border-bottom:  1px solid black;
 }
 
-.title-sentings h1, i {
+#close {
     padding: 0 30px;
-}
-
-.title-sentings i {
     font-size: 40px;
 }
 

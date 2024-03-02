@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe Game</title>
+    <link rel="stylesheet" href="src/style/game.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="modo">
+            <button id="modoUm" onclick="ModoDupla()"><i class="fa-solid fa-user"><i class="fa-solid fa-user"></i></i></button>
+            <button id="modoDois" onclick="ModoRobo()"><i class="fa-solid fa-robot"></i></button>
+        </div>
+        <div id="winner">
+            <div class="local-winner">
+                <p id="paragraph-winner">YOU WON!</p>
+                <h1 id="saida-winner">X TAKES THE ROUND</h1>
+                <button onclick="Restart()">NEXT ROUND</button>
+            </div>
+        </div>
+        <div id="quiter">
+            <div class="local-quiter">
+                <p>YOU ARE AMAZING!</p>
+                <h1 id="saida-winner">THANK YOU FOR PLAYING MY GAME</h1>
+            </div>
+        </div>
+        <div class="button-superior">
+            <div id="xando">
+                <h3 id="x">X</h3>
+                <h3 id="o">O</h3>
+            </div>
+            <button onclick="Quit()" id="quit">Quit</button>
+            <button onclick="Reset()"><i class="fa-solid fa-trash"></i></button>
+        </div>
+        <div class="grid">
+            <div id="um" onclick="PlayUm()" class="box"></div>
+            <div id="dois" onclick="PlayDois()" class="box"></div>
+            <div id="tres" onclick="PlayTres()" class="box"></div>
+            <div id="quatro" onclick="PlayQuatro()" class="box"></div>
+            <div id="cinco" onclick="PlayCinco()" class="box"></div>
+            <div id="seis" onclick="PlaySeis()" class="box"></div>
+            <div id="sete" onclick="PlaySete()" class="box"></div>
+            <div id="oito" onclick="PlayOito()" class="box"></div>
+            <div id="nove" onclick="PlayNove()" class="box"></div>
+        </div>
+        <div class="grid-placar">
+            <div id="placarX" class="scoreboard">placar x <br> 0</div>
+            <div id="placarTie" class="scoreboard">placar tie <br> 0</div>
+            <div id="placarO" class="scoreboard">placar o <br> 0</div>
+        </div>
+    </main>
+
+    <script src="src/script/game.js"></script>
+</body>
+</html>
