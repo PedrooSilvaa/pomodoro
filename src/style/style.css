@@ -448,13 +448,20 @@ button{
 }
 
 @media(max-width: 800px){
+
+    #principal{
+        justify-content: center;
+    }
+
     .relogio {
+        margin: 20px 0;
         width: 70%;
         height: 40%;
         font-size: 50px;
     }
     
     .menu{
+        margin-top: 20px ;
         width: 70%;
     }
 
@@ -464,6 +471,10 @@ button{
 
     .tt-p {
         width: 30%;
+    }
+
+    #engrenagem {
+        margin-top: 20px;
     }
 
     #pomodoro, #shortBreak, #longBreak {
