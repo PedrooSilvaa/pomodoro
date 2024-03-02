@@ -103,6 +103,7 @@ function Close(){
     
             if (--timerShortBreak1 < 0) {
                 console.log("Short break 1 concluído!");
+                voltarParaPaginaAnterior();
                 clearInterval(intervalId);  // Para o intervalo quando o timer do short break chegar a zero
                 nextTimerFunction();  // Chama a função para iniciar o próximo timer (pomodoro)
             }
@@ -110,6 +111,7 @@ function Close(){
     }
     
     function StartShortBreak1() {
+        document.getElementById("game").style.display = "flex";
         document.getElementById("p-short").style.backgroundColor = color;
         document.getElementById("p-pomodoro").style.backgroundColor = colorPDesativado;
         duration = 60 * short;  // Substitua pelo valor desejado para o timer do short break
@@ -162,7 +164,8 @@ function Close(){
             display.textContent = minutes + ":" + seconds;
     
             if (--timerLongBreak < 0) {
-                console.log("Short break concluído!");
+                voltarParaPaginaAnterior();
+                console.log("Short long concluído!");
                 clearInterval(intervalId);  // Para o intervalo quando o timer do short break chegar a zero
                 nextTimerFunction();  // Chama a função para iniciar o próximo timer (pomodoro)
             }
@@ -170,6 +173,7 @@ function Close(){
     }
     
     function StartLongBreak() {
+        document.getElementById("game").style.display = "flex";
         document.getElementById("p-long").style.backgroundColor = color;
         document.getElementById("p-pomodoro").style.backgroundColor = colorPDesativado;
         duration = 60 * long;  // Substitua pelo valor desejado para o timer do short break
@@ -191,7 +195,7 @@ function Close(){
             display.textContent = minutes + ":" + seconds;
     
             if (--timerPomodoro3 < 0) {
-                console.log("Pomodoro 2 concluído!");
+                console.log("Pomodoro 3 concluído!");
                 clearInterval(intervalId);  // Para o intervalo quando o timer do short break chegar a zero
                 nextTimerFunction();  // Chama a função para iniciar o próximo timer (pomodoro)
             }
@@ -221,7 +225,8 @@ function Close(){
             display.textContent = minutes + ":" + seconds;
     
             if (--timerShortBreak2 < 0) {
-                console.log("Short break concluído!");
+                voltarParaPaginaAnterior();
+                console.log("Short break 2 concluído!");
                 clearInterval(intervalId);  // Para o intervalo quando o timer do short break chegar a zero
                 nextTimerFunction();  // Chama a função para iniciar o próximo timer (pomodoro)
             }
@@ -229,6 +234,7 @@ function Close(){
     }
     
     function StartShortBreak2() {
+        document.getElementById("game").style.display = "flex";
         document.getElementById("p-short").style.backgroundColor = color;
         document.getElementById("p-pomodoro").style.backgroundColor = colorPDesativado;
         duration = 60 * short;  // Substitua pelo valor desejado para o timer do short break
@@ -250,7 +256,7 @@ function Close(){
             display.textContent = minutes + ":" + seconds;
     
             if (--timerPomodoro4 < 0) {
-                console.log("Pomodoro 2 concluído!");
+                console.log("Pomodoro 4 concluído!");
                 clearInterval(intervalId);  // Para o intervalo quando o timer do short break chegar a zero
                 nextTimerFunction();  // Chama a função para iniciar o próximo timer (pomodoro)
             }
@@ -266,4 +272,17 @@ function Close(){
     }
     function Fim() {
         document.getElementById("p-pomodoro").style.backgroundColor = colorPDesativado;  
+    }
+
+    function Game(){
+        document.getElementById("jogoVelha").style.display = "flex";
+        document.getElementById("game").style.display = "none";
+    }
+
+    function voltarParaPaginaAnterior() {
+        document.getElementById("jogoVelha").style.display = "none";
+    }
+
+    function Back(){
+        document.getElementById("game").style.display = "none";
     }
