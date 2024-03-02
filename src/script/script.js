@@ -2,11 +2,15 @@ var pomodoro = 0;
 var short = 0;
 var long = 0;
 var font = "";
-var color = "";
+var color = "#151932";
 var modo = 0;
 var tmp = 0;
 var duration = 0;
 var display = "";
+
+var colorPDesativado = "transparent";
+
+
 function Apply(){
     pomodoro = document.getElementById('pomodoro').value;
     short = document.getElementById('shortBreak').value;
@@ -55,235 +59,211 @@ function Close(){
     document.getElementById("window").style.display = "none";
 }
 
-function TimePomo1(duration, display){
-        var timerP1 = duration, minutes, seconds;
     
-        setInterval(function(){
-            minutes = parseInt(timerP1 / 60, 10);
-            seconds = parseInt(timerP1 % 60, 10);
+    //Time pomodoro 1
+    function TimePomodoro1(duration, display, nextTimerFunction) {
+        var timerPomodoro1  = duration, minutes, seconds;
     
-            minutes = minutes < 10 ? "0" + minutes : minutes
-            seconds = seconds < 10 ? "0" + seconds : seconds
+        var intervalId = setInterval(function () {
+            minutes = parseInt(timerPomodoro1 / 60, 10);
+            seconds = parseInt(timerPomodoro1 % 60, 10);
     
-            display.textContent = minutes + ":" + seconds;
-    
-                if(--timerP1 < 0){
-                    console.log("modo 1 " + duration);
-                    timerP1 = 0;
-                    modo = 2;
-                }
-        }, 300)
-    }
-    
-    function StartPomo1(){
-            duration = 60 * pomodoro;
-            display = document.querySelector("#minutes");
-            TimePomo1(duration, display);
-    }
-
-    function TimeShort(duration, display){
-        var timerS = duration, minutes, seconds;
-    
-        setInterval(function(){
-            minutes = parseInt(timerS / 60, 10);
-            seconds = parseInt(timerS % 60, 10);
-    
-            minutes = minutes < 10 ? "0" + minutes : minutes
-            seconds = seconds < 10 ? "0" + seconds : seconds
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
     
             display.textContent = minutes + ":" + seconds;
     
-            if(--timerS < 0){
-                console.log("modo 2 " + duration);
-                timerS = 0;
-                modo = 3;
+            if (--timerPomodoro1 < 0) {
+                console.log("Pomodoro 1 concluído!");
+                clearInterval(intervalId);  // Para o intervalo quando o timer do short break chegar a zero
+                nextTimerFunction();  // Chama a função para iniciar o próximo timer (pomodoro)
             }
-            
-        }, 300)
+        }, 1000);  // Alterei para 1000 milissegundos (1 segundo) para um timer mais preciso
     }
     
-    function StartShort(){
-            duration = 60 * short;
-            display = document.querySelector("#short-minutes");
-            TimeShort(duration, display);
-            
-}
-
-function TimePomo2(duration, display){
-        var timerP2 = duration, minutes, seconds;
-    
-        setInterval(function(){
-            minutes = parseInt(timerP2 / 60, 10);
-            seconds = parseInt(timerP2 % 60, 10);
-    
-            minutes = minutes < 10 ? "0" + minutes : minutes
-            seconds = seconds < 10 ? "0" + seconds : seconds
-    
-            display.textContent = minutes + ":" + seconds;
-    
-                if(--timerP2 < 0){
-                    console.log("modo 3 " + duration);
-                    timerP2 = 0;
-                    modo = 4;   
-                }
-    
-        }, 300)
-
-    }
-    
-    function StartPomo2(){
-        duration = 60 * pomodoro;
+    function StartPomodoro1() {
+        duration = 60 * pomodoro;  // Substitua pelo valor desejado para o timer do short break
         display = document.querySelector("#minutes");
-        TimePomo2(duration, display);
-        
-}
-    
-  
-function TimeLong(duration, display){
-        var timerL = duration, minutes, seconds;
-    
-        setInterval(function(){
-            minutes = parseInt(timerL / 60, 10);
-            seconds = parseInt(timerL % 60, 10);
-    
-            minutes = minutes < 10 ? "0" + minutes : minutes
-            seconds = seconds < 10 ? "0" + seconds : seconds
-    
-            display.textContent = minutes + ":" + seconds;
-    
-                if(--timerL < 0){
-                    console.log("modo 4 " + duration);
-                    timerL = 0;
-                    modo = 5;
-                }
-        }, 300)
+        TimePomodoro1(duration, display, StartShortBreak1);  // Adiciona a função StartPomo1 como argumento
     }
-    
-    function StartLong(){
-            duration = 60 * short;
-            display = document.querySelector("#long-minutes");
-            TimeLong(duration, display);
-            
-}
 
-function TimePomo3(duration, display){
-        var timerP3 = duration, minutes, seconds;
+
+    //Time short break 1
+    function TimeShortBreak1(duration, display, nextTimerFunction) {
+        var timerShortBreak1 = duration, minutes, seconds;
     
-        setInterval(function(){
-            minutes = parseInt(timerP3 / 60, 10);
-            seconds = parseInt(timerP3 % 60, 10);
+        var intervalId = setInterval(function () {
+            minutes = parseInt(timerShortBreak1 / 60, 10);
+            seconds = parseInt(timerShortBreak1 % 60, 10);
     
-            minutes = minutes < 10 ? "0" + minutes : minutes
-            seconds = seconds < 10 ? "0" + seconds : seconds
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
     
             display.textContent = minutes + ":" + seconds;
     
-                if(--timerP3 < 0){
-                    console.log("modo 5 " + duration);
-                    timerP3 = 0;
-                    modo = 6;
-                }
-    
-        }, 300)
-    }
-    
-    
-    function StartPomo3(){
-            duration = 60 * pomodoro;
-            display = document.querySelector("#minutes");
-            TimePomo3(duration, display);
-}
-
-function TimeShort1(duration, display){
-        var timerS1 = duration, minutes, seconds;
-    
-        setInterval(function(){
-            minutes = parseInt(timerS1 / 60, 10);
-            seconds = parseInt(timerS1 % 60, 10);
-    
-            minutes = minutes < 10 ? "0" + minutes : minutes
-            seconds = seconds < 10 ? "0" + seconds : seconds
-    
-            display.textContent = minutes + ":" + seconds;
-    
-                if(--timerS1 < 0){
-                    console.log("modo 6 " + duration);
-                    timerS1 = 0;
-                    modo = 7;
-                }
-    
-        }, 300)
-    }
-    
-
-    function StartShort1(){
-            duration = 60 * short;
-            display = document.querySelector("#short-minutes");
-            TimeShort1(duration, display);
-            
-}
-
-function TimePomo4(duration, display){
-        var timerP4 = duration, minutes, seconds;
-    
-        setInterval(function(){
-            minutes = parseInt(timerP4 / 60, 10);
-            seconds = parseInt(timerP4 % 60, 10);
-    
-            minutes = minutes < 10 ? "0" + minutes : minutes
-            seconds = seconds < 10 ? "0" + seconds : seconds
-    
-            display.textContent = minutes + ":" + seconds;
-            
-                if(--timerP4 < 0){
-                    console.log("modo 7 " + duration);
-                    timerP4 = 0;
+            if (--timerShortBreak1 < 0) {
+                console.log("Short break 1 concluído!");
+                clearInterval(intervalId);  // Para o intervalo quando o timer do short break chegar a zero
+                nextTimerFunction();  // Chama a função para iniciar o próximo timer (pomodoro)
             }
-    
-        }, 300)
-        
+        }, 1000);  // Alterei para 1000 milissegundos (1 segundo) para um timer mais preciso
     }
     
-    function StartPomo4(){
-            duration = 60 * pomodoro;
-            display = document.querySelector("#minutes");
-            TimePomo4(duration, display);
-            
-}
+    function StartShortBreak1() {
+        document.getElementById("p-short").style.backgroundColor = color;
+        document.getElementById("p-pomodoro").style.backgroundColor = colorPDesativado;
+        duration = 60 * short;  // Substitua pelo valor desejado para o timer do short break
+        display = document.querySelector("#minutes");
+        TimeShortBreak1(duration, display, StartPomodoro2);  // Adiciona a função StartPomo1 como argumento
+    }
 
 
-function TrocaMod(){
-    if(modo == 2){
-        document.getElementById("short-re").style.display = "flex";
-        StartShort();
+      //Time pomodoro 2
+      function TimePomodoro2(duration, display, nextTimerFunction) {
+        var timerPomodoro2  = duration, minutes, seconds;
+    
+        var intervalId = setInterval(function () {
+            minutes = parseInt(timerPomodoro2 / 60, 10);
+            seconds = parseInt(timerPomodoro2 % 60, 10);
+    
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+            display.textContent = minutes + ":" + seconds;
+    
+            if (--timerPomodoro2 < 0) {
+                console.log("Pomodoro 2 concluído!");
+                clearInterval(intervalId);  // Para o intervalo quando o timer do short break chegar a zero
+                nextTimerFunction();  // Chama a função para iniciar o próximo timer (pomodoro)
+            }
+        }, 1000);  // Alterei para 1000 milissegundos (1 segundo) para um timer mais preciso
     }
-    if(modo == 3){
-        document.getElementById("short-re").style.display = "none";
-        StartPomo2();
+    
+    function StartPomodoro2() {
+        document.getElementById("p-short").style.backgroundColor = colorPDesativado;
+        document.getElementById("p-pomodoro").style.backgroundColor = color;
+        duration = 60 * pomodoro;  // Substitua pelo valor desejado para o timer do short break
+        display = document.querySelector("#minutes");
+        TimePomodoro2(duration, display, StartLongBreak);  // Adiciona a função StartPomo1 como argumento
     }
-    if(modo == 4){
-        document.getElementById("short-re").style.display = "none";
-        document.getElementById("long-relo").style.display = "flex";
-        StartLong();
-    }
-    if(modo == 5){
-        document.getElementById("short-re").style.display = "none";
-        document.getElementById("long-relo").style.display = "none";
-        StartPomo3();
-    }
-    if(modo == 6){
-        document.getElementById("short-re").style.display = "flex";
-        StartShort1();
-    }
-    if(modo == 7){
-        document.getElementById("short-re").style.display = "none";
-        document.getElementById("short-re").style.display = "none";
-        StartPomo4();
-    }
-}
 
 
-function Pause(){
-    timer = 0;
-    duration = 0;
-}
+    // Time long break 
+    function TimeLongBreak(duration, display, nextTimerFunction) {
+        var timerLongBreak = duration, minutes, seconds;
+    
+        var intervalId = setInterval(function () {
+            minutes = parseInt(timerLongBreak / 60, 10);
+            seconds = parseInt(timerLongBreak % 60, 10);
+    
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+            display.textContent = minutes + ":" + seconds;
+    
+            if (--timerLongBreak < 0) {
+                console.log("Short break concluído!");
+                clearInterval(intervalId);  // Para o intervalo quando o timer do short break chegar a zero
+                nextTimerFunction();  // Chama a função para iniciar o próximo timer (pomodoro)
+            }
+        }, 1000);  // Alterei para 1000 milissegundos (1 segundo) para um timer mais preciso
+    }
+    
+    function StartLongBreak() {
+        document.getElementById("p-long").style.backgroundColor = color;
+        document.getElementById("p-pomodoro").style.backgroundColor = colorPDesativado;
+        duration = 60 * long;  // Substitua pelo valor desejado para o timer do short break
+        display = document.querySelector("#minutes");
+        TimeLongBreak(duration, display, StartPomodoro3);  // Adiciona a função StartPomo1 como argumento
+    }
+
+      //Time pomodoro 3
+      function TimePomodoro3(duration, display, nextTimerFunction) {
+        var timerPomodoro3  = duration, minutes, seconds;
+    
+        var intervalId = setInterval(function () {
+            minutes = parseInt(timerPomodoro3 / 60, 10);
+            seconds = parseInt(timerPomodoro3 % 60, 10);
+    
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+            display.textContent = minutes + ":" + seconds;
+    
+            if (--timerPomodoro3 < 0) {
+                console.log("Pomodoro 2 concluído!");
+                clearInterval(intervalId);  // Para o intervalo quando o timer do short break chegar a zero
+                nextTimerFunction();  // Chama a função para iniciar o próximo timer (pomodoro)
+            }
+        }, 1000);  // Alterei para 1000 milissegundos (1 segundo) para um timer mais preciso
+    }
+    
+    function StartPomodoro3() {
+        document.getElementById("p-long").style.backgroundColor = colorPDesativado;
+        document.getElementById("p-pomodoro").style.backgroundColor = color;
+        duration = 60 * pomodoro;  // Substitua pelo valor desejado para o timer do short break
+        display = document.querySelector("#minutes");
+        TimePomodoro3(duration, display, StartShortBreak2);  // Adiciona a função StartPomo1 como argumento
+    }
+
+
+    // Time short break 2
+    function TimeShortBreak2(duration, display, nextTimerFunction) {
+        var timerShortBreak2 = duration, minutes, seconds;
+    
+        var intervalId = setInterval(function () {
+            minutes = parseInt(timerShortBreak2 / 60, 10);
+            seconds = parseInt(timerShortBreak2 % 60, 10);
+    
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+            display.textContent = minutes + ":" + seconds;
+    
+            if (--timerShortBreak2 < 0) {
+                console.log("Short break concluído!");
+                clearInterval(intervalId);  // Para o intervalo quando o timer do short break chegar a zero
+                nextTimerFunction();  // Chama a função para iniciar o próximo timer (pomodoro)
+            }
+        }, 1000);  // Alterei para 1000 milissegundos (1 segundo) para um timer mais preciso
+    }
+    
+    function StartShortBreak2() {
+        document.getElementById("p-short").style.backgroundColor = color;
+        document.getElementById("p-pomodoro").style.backgroundColor = colorPDesativado;
+        duration = 60 * short;  // Substitua pelo valor desejado para o timer do short break
+        display = document.querySelector("#minutes");
+        TimeShortBreak2(duration, display, StartPomodoro4);  // Adiciona a função StartPomo1 como argumento
+    }
+
+      //Time pomodoro 4
+      function TimePomodoro4(duration, display, nextTimerFunction) {
+        var timerPomodoro4  = duration, minutes, seconds;
+    
+        var intervalId = setInterval(function () {
+            minutes = parseInt(timerPomodoro4 / 60, 10);
+            seconds = parseInt(timerPomodoro4 % 60, 10);
+    
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+    
+            display.textContent = minutes + ":" + seconds;
+    
+            if (--timerPomodoro4 < 0) {
+                console.log("Pomodoro 2 concluído!");
+                clearInterval(intervalId);  // Para o intervalo quando o timer do short break chegar a zero
+                nextTimerFunction();  // Chama a função para iniciar o próximo timer (pomodoro)
+            }
+        }, 1000);  // Alterei para 1000 milissegundos (1 segundo) para um timer mais preciso
+    }
+    
+    function StartPomodoro4() {
+        document.getElementById("p-short").style.backgroundColor = colorPDesativado;
+        document.getElementById("p-pomodoro").style.backgroundColor = color;
+        duration = 60 * pomodoro; 
+        display = document.querySelector("#minutes");
+        TimePomodoro4(duration, display, Fim);  
+    }
+    function Fim() {
+        document.getElementById("p-pomodoro").style.backgroundColor = colorPDesativado;  
+    }

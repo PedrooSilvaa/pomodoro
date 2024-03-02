@@ -220,6 +220,24 @@ i {
     justify-content: center;
     align-items: center;
 }
+#p-short{
+    height: 90%;
+    border-radius: 25px;
+    width: 95px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+#p-long{
+    height: 90%;
+    border-radius: 25px;
+    width: 95px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
 
 .relogio {
     background-color: #151932;
